@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { API_URI } from "../../../config";
+// import { API_URI } from "../../../config";
 
 const AddUser = () => {
   const [formData, setFormData] = useState({
@@ -19,7 +19,7 @@ const AddUser = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post(`${API_URI}/auth/register`, formData);
+      const res = await axios.post(`${import.meta.env.VITE_API_URI}/auth/register`, formData);
 
       alert(res.data.message);
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { API_URI } from "../../../config";
+// import { API_URI } from "../../../config";
 
 export default function Daily_Attendance() {
   const [attendance, setAttendance] = useState([]);
@@ -11,7 +11,7 @@ export default function Daily_Attendance() {
   const fetchAttendance = async () => {
     try {
       const res = await axios.get(
-        `${API_URI}/attendance/show?userId=${userId}`,
+        `${import.meta.env.VITE_API_URI}/attendance/show?userId=${userId}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -51,7 +51,7 @@ export default function Daily_Attendance() {
   const handleCheckIn = async () => {
     try {
       const res = await axios.post(
-        `${API_URI}/attendance/checkin`,
+        `${import.meta.env.VITE_API_URI}/attendance/checkin`,
         { userId },
         {
           headers: {
@@ -69,7 +69,7 @@ export default function Daily_Attendance() {
   const handleCheckOut = async () => {
     try {
       const res = await axios.post(
-        `${API_URI}/attendance/checkout`,
+        `${import.meta.env.VITE_API_URI}/attendance/checkout`,
         {},
         {
           headers: {

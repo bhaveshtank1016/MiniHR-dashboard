@@ -5,7 +5,7 @@ import { CheckCircle, XCircle } from "lucide-react";
 import PageLeavePagination from "./PageLeavePagination.jsx";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router";
-import { API_URI } from "../../../config.jsx";
+// import { API_URI } from "../../../config.jsx";
 
 function LeaveList() {
   const [page, setPage] = useState(1);
@@ -19,7 +19,7 @@ function LeaveList() {
   // ================= FETCH LEAVES =================
   const fetchLeaves = async () => {
     try {
-      const res = await fetch(`${API_URI}/leaves/show?page=${page}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URI}/leaves/show?page=${page}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -43,7 +43,7 @@ function LeaveList() {
   // ================= UPDATE STATUS (ADMIN ONLY) =================
   const handleStatusChange = async (id, newStatus) => {
     try {
-      const res = await fetch(`${API_URI}/leaves/${id}/status`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URI}/leaves/${id}/status`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

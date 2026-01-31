@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { RiDeleteBinFill, RiEdit2Fill } from "react-icons/ri";
-import { API_URI } from "../../../config";
+// import { API_URI } from "../../../config";
 
 const AttendanceList = () => {
   const [attendance, setAttendance] = useState([]);
@@ -14,7 +14,7 @@ const AttendanceList = () => {
 
   const fetchAttendance = async () => {
     try {
-      const res = await axios.get(`${API_URI}/attendance/show`, {
+      const res = await axios.get(`${import.meta.env.VITE_API_URI}/attendance/show`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -28,7 +28,7 @@ const AttendanceList = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this record?")) return;
     try {
-      await axios.delete(`${API_URI}/attendance/${id}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URI}/attendance/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

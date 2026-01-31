@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { API_URI } from "../../../config";
+// import { API_URI } from "../../../config";
 
 function ApplyLeave() {
   const [leaveType, setLeaveType] = useState("");
@@ -42,7 +42,7 @@ function ApplyLeave() {
     setLoading(true);
 
     try {
-      const res = await fetch(`${API_URI}/leaves/apply`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URI}/leaves/apply`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

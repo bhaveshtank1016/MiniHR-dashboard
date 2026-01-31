@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
-import { API_URI } from "../../../config";
+// import { API_URI } from "../../../config";
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
@@ -11,7 +11,7 @@ const UserList = () => {
   // Fetch all users
   const fetchUsers = async () => {
     try {
-      const res = await axios.get(`${API_URI}/users`);
+      const res = await axios.get(`${import.meta.env.VITE_API_URI}/users`);
       setUsers(res.data);
       setLoading(false);
     } catch (err) {
