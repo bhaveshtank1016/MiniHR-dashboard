@@ -45,12 +45,15 @@ git clone (https://github.com/bhaveshtank1016/MiniHR-dashboard.git)
 cd Hr-mini-/backend
 npm install
 npm run start 
-node createAdmin.js
+node seedAdmin.js
 Make sure  server is running ( http://localhost:5000)
 npm run dev for frontend 
 
+cd frontedn 
+npm i 
+npm run dev
 
-admin email --admin@company.com
+admin --admin@company.com
 pssword --Admin@123
 
 
