@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Eye, EyeOff, Mail, Lock } from "lucide-react";
+import { API_URI } from "../../config";
 
 const COMPANY_LOGO =
   "https://media.licdn.com/dms/image/v2/C560BAQEuzb6ataN1hw/company-logo_200_200/company-logo_200_200/0/1631339165284?e=2147483647&v=beta&t=Fd4mXIlVPsDtv3wyd5AxPhroQ7FZrY9DZEdkASmPVUc";
@@ -21,7 +22,7 @@ const SignIn = () => {
 
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5000/api/auth/login", {
+      const res = await fetch(`${API_URI}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
