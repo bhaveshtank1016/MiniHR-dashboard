@@ -14,7 +14,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://classy-gnome-3354a7.netlify.app/", // React dev server
+    origin: "https://classy-gnome-3354a7.netlify.app", // React dev server
     credentials: true,
   }),
 );
