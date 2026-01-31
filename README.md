@@ -39,7 +39,7 @@ Hr‑mini‑/
 
 
 How to Clone the repository
-git clone https://github.com/bhaveshtank1016/Hr-mini-.git
+git clone (https://github.com/bhaveshtank1016/MiniHR-dashboard.git)
 
 
 cd Hr-mini-/backend
